@@ -7,7 +7,7 @@ services:
       - proton-bridge-data:/root
 
   ai-agent:
-    image: ghcr.io/YOUR_GITHUB_USERNAME/protonmail-ai-agent:latest
+    image: ghcr.io/nidzhat666/protonmail-ai-agent:latest
     container_name: proton-ai-agent
     restart: unless-stopped
     depends_on:
