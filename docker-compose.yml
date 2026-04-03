@@ -1,0 +1,19 @@
+services:
+  proton-bridge:
+    image: shenxn/protonmail-bridge:latest
+    container_name: proton-bridge
+    restart: unless-stopped
+    volumes:
+      - proton-bridge-data:/root
+
+  ai-agent:
+    image: ghcr.io/YOUR_GITHUB_USERNAME/protonmail-ai-agent:latest
+    container_name: proton-ai-agent
+    restart: unless-stopped
+    depends_on:
+      - proton-bridge
+    env_file:
+      - .env
+
+volumes:
+  proton-bridge-data:
